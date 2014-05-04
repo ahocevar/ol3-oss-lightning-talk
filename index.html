@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="de">
+
+    <head>
+        <meta charset="utf-8">
+
+        <title>OpenLayers 3 and why Open Source makes a difference</title>
+
+        <meta name="description" content="Lightning talk presented at the Boundless kickoff in New Orleans in May 2014">
+        <meta name="author" content="Andreas Hocevar, Boundless">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="resources/reveal.js-2.6.1/css/reveal.min.css">
+        <link rel="stylesheet" href="resources/reveal.js-2.6.1/css/theme/default.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="resources/reveal.js-2.6.1/lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <script>
+            document.write( '<link rel="stylesheet" href="resources/reveal.js-2.6.1/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
+
+        <link rel="stylesheet" type="text/css" href="resources/customized.css" />
+    </head>
+
+    <body>
+
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section id="welcome">
+                    <h1>OpenLayers 3</h1>
+                    <hr />
+                    <h3>and why Open Source makes a difference</h3>
+                    <img src="resources/images/ol3-logo.png" width="300" class="plain"/>
+                    <p>
+                        <small>Andreas Hocevar, Boundless</small>
+                    </p>
+                </section>
+
+                <section>
+                    <h1>Old &amp; New</h1>
+                </section>
+
+                <section>
+                    <h2>OpenLayers 2.x</h2>
+                    <ul>
+                        <li>
+                            Very popular JavaScript library for
+                            dynamic, web based mapping applications
+                            <br>
+                        </li>
+                        <li>
+                            Version 2.0 &rArr; <strong class="highlight">7.5 years ago</strong>
+                        </li>
+                    </ul>
+                    <img src="resources/images/v2.0.0.png" />
+                </section>
+
+                <section>
+                    <h2>OpenLayers 2.x</h2>
+                    <ul>
+                        <li>
+                            Now at version 2.13.
+                        </li>
+                        <li>
+                            &gt; 6.000 commits, ~100 contributors.
+                        </li>
+                        <li>Dozens of layer types, controls, formats.</li>
+                        <li>And mobile support.</li>
+                        <li>And books:</li>
+                        <div id="books">
+                            <div>
+                                <img src="resources/images/packt-ol-cookbook.png" class="plain" style="margin-top:30px">
+                            </div>
+                            <div>
+                                <img src="resources/images/openlayers_de_1ed.png" class="plain">
+                            </div>
+                            <div>
+                                <img src="resources/images/packt-ol.jpg" class="plain" style="margin-top:30px">
+                            </div>
+                        </div>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>But&hellip;</h2>
+                    <ul>
+                        <li>Based on browser technology from 10 years ago</li>
+                        <li>A lot of legacy code</li>
+                    </ul>
+                    <div id="ie-evolution">
+                        <div>
+                            <img src="resources/images/ie6.png" class="plain contrast">
+                        </div>
+                        <div>
+                            <img src="resources/images/ie11.png" class="plain contrast">
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h3>&hellip;hence&hellip;</h3>
+                    <h1>We want a new OpenLayers!</h1>
+                </section>
+
+                <section>
+                    <h2 class="force-lowercase">ol3</h2>
+                    <ul>
+                        <li>under developemnt since ~ 1.5 years</li>
+                        <li>partially crowdfunded</li>
+                        <li>4 alpha &amp; 5 beta releases</li>
+                        <li><a href="http://ol3js.org/">ol3js.org</a></li>
+                     </ul>
+                </section>
+
+                <section>
+                    <h2>What is new?</h2>
+                    <ul>
+                        <li>more or less: <strong class="highlight">everything</strong></li>
+                        <li>Comprehensive <em lang="en">rewrite from scratch</em></li>
+                        <li>Format unit tests taken from OpenLayers 2</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>What is new?</h2>
+                    <ul>
+                        <li><a href="https://developers.google.com/closure/library/">Google Closure Library</a> (Gmail, Google Maps)</li>
+                        <li><a href="https://developers.google.com/closure/compiler/">Google Closure Compiler</a></li>
+                        <li><a href="http://usejsdoc.org/">jsdoc3</a></li>
+                        <li><a href="http://www.khronos.org/webgl/">WebGL</a></li>
+                        <li><em lang="en">Cross-platform by design</em></li>
+                        <li>No hard-coded styling - pure CSS</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <div>
+                        <img src="resources/images/closure-compiler-by-tmcw.png"
+                          class="plain" alt="Closure is a big buyin, but probably worth it. --tmcw" />
+                    </div>
+                    Yes and Yes!
+                </section>
+
+                <section>
+                    <h2>What stays the same?</h2>
+                    <ul>
+                        <li>Geospatial at the core</li>
+                        <li>Support for projections, OGC standards, ...</li>
+                        <li>The core developers</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>The core developers?</h2>
+                    <p>What about twpayne and tschaub?</p>
+                    <p>Open Source software is owned by the developers,
+                      not the companies they work for.</p>
+                    <p>&rArr; They are still core developers and still involved.</p>
+                </section>
+
+                <section>
+                    <h1>So where is the final 3.0 release?</h1>
+                </section>
+
+                <section>
+                    <h2>Open Source and release cylces</h2>
+                    <img style="width: 820px" src="resources/images/release.png">
+                </section>
+
+                <section>
+                    <h2>Open Source and release cylces</h2>
+                    <ul>
+                      <li>Low version numbers are common in Open Source</li>
+                      <li>Leaflet is at release 0.7</li>
+                      <li>OpenLayers is at v3.0.0-beta.5</li>
+                      <li>Package maintainers can run their own QA and release cycle - Boundless does this for GeoServer too</li>
+                    </ul>
+                </section>
+
+                <section>
+                  <h1>Some examples and tech highlights</h1>
+                </section>
+
+                <section>
+                    <h2>Hello World</h2>
+                    <a href="http://ol3js.org/en/master/examples/simple.html" target="_blank">
+                        <img src="resources/images/simple-example.png">
+                        ol3js.org/en/master/examples/simple.html
+                    </a>
+                </section>
+
+                <section>
+                    <h2>Code</h2>
+                    <pre><code class="javascript" data-trim contenteditable>
+  var map = new ol.Map({
+    layers: [
+      new ol.layer.Tile({
+        source: new ol.source.OSM()
+      })
+    ],
+    target: 'map',
+    view: new ol.View2D({
+      center: [0, 0],
+      zoom: 2
+    })
+  });
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Vector tiles</h2>
+                        <a href="http://ol3js.org/en/master/examples/tile-vector.html">
+                        <img src="resources/images/vector-tiles.png">
+                        http://ol3js.org/en/master/examples/tile-vector.html
+                    </a>
+                </section>
+
+                <section>
+                    <h2>Performance Replay-API</h2>
+                    <a href="http://ol3js.org/en/master/examples/fractal.html" target="_blank">
+                        <img src="resources/images/fractal.png">
+                        http://ol3js.org/en/master/examples/fractal.html
+                    </a>
+                </section>
+
+                <section>
+                    <h2>Performance Replay-API</h2>
+                    <a href="http://git.io/OY6NVA">
+                        <img src="resources/images/clip.png">
+                        http://git.io/OY6NVA
+                    </a>
+                </section>
+
+                <section>
+                    <h2>Performance R-Tree</h2>
+                    <a href="https://github.com/imbcmdth/RTree" target="_blank">
+                        <img src="resources/images/rtree.png">
+                        https://github.com/imbcmdth/RTree
+                    </a>
+                </section>
+
+                <section>
+                    <h2>Performance R-Tree</h2>
+                    <a href="https://github.com/mourner/rbush" target="_blank">
+                        <img src="resources/images/rbush.png">
+                        https://github.com/mourner/rbush
+                    </a>
+                </section>
+                <section>
+                    <h2>pre-/postcompose API</h2>
+                    <a href="http://ol3js.org/en/master/examples/layer-spy.html" target="_blank">
+                        <img src="resources/images/layer-spy.png">
+                        http://ol3js.org/en/master/examples/layer-spy.html
+                    </a>
+                </section>
+
+                <section>
+                    <h2><span lang="en">Ready for production?</span></h2>
+                    <ul>
+                        <li>All important features are implemented</li>
+                        <li>Good test coverage to insure code quality</li>
+                        <li>New build tool for custom builds now available</li>
+                        <li>Online build tool and nicer API docs ETA soon</li>
+                    </ul>
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="resources/reveal.js-2.6.1/lib/js/head.min.js"></script>
+        <script src="resources/reveal.js-2.6.1/js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: 'sky', // available themes are in /css/theme
+                transition: 'zoom', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'resources/reveal.js-2.6.1/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'resources/reveal.js-2.6.1/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'resources/reveal.js-2.6.1/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'resources/reveal.js-2.6.1/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'resources/reveal.js-2.6.1/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'resources/reveal.js-2.6.1/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+
+    </body>
+</html>
